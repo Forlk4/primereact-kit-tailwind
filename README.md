@@ -1,19 +1,56 @@
-# PrimeReact Kit Tailwind
+# 🎨 PrimeReact Kit Tailwind
 
-Tailwind CSS preset library for PrimeReact components using PassThrough API.
+### Tailwind CSS preset library for PrimeReact components using PassThrough API
 
-## Features
+[![npm version](https://img.shields.io/npm/v/primereact-kit-tailwind?style=flat&colorA=18181B&colorB=3b82f6)](https://www.npmjs.com/package/primereact-kit-tailwind)
+[![npm downloads](https://img.shields.io/npm/dm/primereact-kit-tailwind?style=flat&colorA=18181B&colorB=3b82f6)](https://www.npmjs.com/package/primereact-kit-tailwind)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/primereact-kit-tailwind?style=flat&colorA=18181B&colorB=3b82f6)](https://bundlephobia.com/package/primereact-kit-tailwind)
+[![license](https://img.shields.io/npm/l/primereact-kit-tailwind?style=flat&colorA=18181B&colorB=3b82f6)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat&colorA=18181B&colorB=10b981)](http://makeapullrequest.com)
+[![GitHub stars](https://img.shields.io/github/stars/Forlk4/primereact-kit-tailwind?style=flat&colorA=18181B&colorB=f59e0b)](https://github.com/Forlk4/primereact-kit-tailwind/stargazers)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue?style=flat&colorA=18181B&colorB=3b82f6&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-- 🎨 Pre-styled PrimeReact components with Tailwind CSS
-- 🌓 Dark mode support
-- 🎯 Customizable color themes using CSS variables
-- 📦 Zero configuration - just import and use
-- 🚀 TypeScript support
-- ⚡ Built with Vite
+[Installation](#-installation) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Examples](#-examples) • [Contributing](#-contributing)
 
-## Prerequisites
+---
 
-Your project must have the following dependencies installed:
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🎨 **Pre-styled Components**
+Zero configuration styling with Tailwind CSS
+
+### 🌓 **Dark Mode Support**  
+Built-in dark mode with CSS variables
+
+### 🎯 **Customizable Themes**
+Easy color customization using CSS variables
+
+</td>
+<td width="50%">
+
+### 📦 **Zero Configuration**
+Import and use immediately
+
+### 🚀 **TypeScript Ready**
+Full TypeScript support included
+
+### ⚡ **Vite Optimized**
+Built and optimized with Vite
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📋 Prerequisites
+
+Before installing, ensure you have these dependencies:
+
 ```json
 {
   "dependencies": {
@@ -26,20 +63,44 @@ Your project must have the following dependencies installed:
 }
 ```
 
-## Installation
+---
+
+## 📦 Installation
+
+Choose your preferred package manager:
+
+<details open>
+<summary><b>npm</b></summary>
+
 ```bash
 npm install primereact-kit-tailwind
-# or
+```
+</details>
+
+<details>
+<summary><b>pnpm</b></summary>
+
+```bash
 pnpm add primereact-kit-tailwind
-# or
+```
+</details>
+
+<details>
+<summary><b>yarn</b></summary>
+
+```bash
 yarn add primereact-kit-tailwind
 ```
+</details>
 
-## Setup
+---
 
-### 1. Configure Vite
+## 🚀 Quick Start
 
-Add Tailwind CSS plugin to your `vite.config.ts`:
+### Step 1: Configure Vite
+
+Add Tailwind CSS plugin to `vite.config.ts`:
+
 ```typescript
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -50,13 +111,16 @@ export default defineConfig({
 });
 ```
 
-### 2. Setup CSS
+### Step 2: Setup CSS Theme
 
-Create or update your main CSS file (e.g., `src/main.css`):
+Create `src/main.css` with your theme:
+
+<details>
+<summary><b>View Complete CSS Setup</b></summary>
+
 ```css
 @import 'tailwindcss';
-@layer tailwind-base, tailwind-utilities;
-
+@source "../node_modules/primereact-kit-tailwind";
 @theme {
   /* Light mode colors */
   --color-base-100: oklch(100% 0 0);
@@ -129,12 +193,14 @@ Create or update your main CSS file (e.g., `src/main.css`):
   --radius-btn: 0.5rem;
 }
 ```
+</details>
 
-> **Note:** You can customize these CSS variables to match your design system.
+> 💡 **Tip:** Customize CSS variables to match your design system
 
-### 3. Apply to PrimeReact
+### Step 3: Apply to PrimeReact
 
-Import and apply the preset in your main application file:
+Configure in your main app file:
+
 ```typescript
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -148,7 +214,7 @@ createRoot(document.getElementById('root')!).render(
     <PrimeReactProvider
       value={{
         pt: primereactKitTailwind,
-        unstyled: false,
+        unstyled: true,
       }}
     >
       <App />
@@ -157,9 +223,12 @@ createRoot(document.getElementById('root')!).render(
 );
 ```
 
-## Usage
+---
 
-Once configured, all PrimeReact components will automatically use the Tailwind styling:
+## 💡 Examples
+
+### Basic Usage
+
 ```typescript
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
@@ -174,42 +243,70 @@ function App() {
 }
 ```
 
-## Customization
+### Custom Theme Colors
 
-### Color Theme
-
-Modify the CSS variables in your `main.css` to customize colors:
 ```css
 @theme {
-  --color-primary: oklch(65% 0.2 250); /* Your custom primary color */
-  --color-secondary: oklch(70% 0.15 180); /* Your custom secondary color */
-  /* ... other customizations */
+  --color-primary: oklch(65% 0.2 250);
+  --color-secondary: oklch(70% 0.15 180);
+  --color-accent: oklch(75% 0.18 200);
 }
 ```
+
+### Border Radius Customization
+
+```css
+@theme {
+  --radius-box: 0.5rem;
+  --radius-field: 0.25rem;
+  --radius-btn: 0.375rem;
+}
+```
+
+---
+
+## 🎨 Customization
+
+<table>
+<tr>
+<td width="50%">
+
+### Color Palette
+Modify CSS variables for complete color control:
+- `--color-primary` - Primary brand color
+- `--color-secondary` - Secondary actions
+- `--color-accent` - Accent highlights
+- `--color-base-*` - Background layers
+- `--color-*-content` - Text on colored backgrounds
+
+</td>
+<td width="50%">
 
 ### Border Radius
+Adjust component roundness:
+- `--radius-box` - Container elements
+- `--radius-field` - Input fields
+- `--radius-btn` - Buttons
 
-Adjust border radius values:
-```css
-@theme {
-  --radius-box: 0.5rem;    /* Box border radius */
-  --radius-field: 0.25rem; /* Input field border radius */
-  --radius-btn: 0.375rem;  /* Button border radius */
-}
-```
+</td>
+</tr>
+</table>
 
-## Development
+---
 
-### Building from Source
+## 🛠️ Development
+
+### Setup Development Environment
+
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/Forlk4/primereact-kit-tailwind.git
 cd primereact-kit-tailwind
 
 # Install dependencies
 npm install
 
-# Build the library
+# Build library
 npm run build
 
 # Format code
@@ -217,51 +314,90 @@ npm run format
 ```
 
 ### Project Structure
+
 ```
 primereact-kit-tailwind/
-├── src/
-│   ├── button/
-│   ├── data/
-│   ├── form/
-│   ├── misc/
-│   ├── overlay/
-│   ├── panel/
-│   ├── utils/
-│   ├── index.js
-│   └── index.d.ts
-├── dist/           # Build output
-├── package.json
-└── vite.config.ts
+├── 📁 src/
+│   ├── 📁 button/       # Button components
+│   ├── 📁 data/         # Data display components
+│   ├── 📁 form/         # Form components
+│   ├── 📁 misc/         # Miscellaneous components
+│   ├── 📁 overlay/      # Overlay components
+│   ├── 📁 panel/        # Panel components
+│   ├── 📁 utils/        # Utility functions
+│   ├── 📄 index.js      # Main entry point
+│   └── 📄 index.d.ts    # TypeScript definitions
+├── 📁 dist/             # Build output
+├── 📄 package.json
+└── 📄 vite.config.ts
 ```
 
-## Contributing
+---
 
-Contributions are welcome! This is an open-source project and we appreciate your help to make it better.
+## 🤝 Contributing
+
+Contributions are welcome! Help us make this project better.
 
 ### How to Contribute
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/...-feature`)
-3. Commit your changes (`git commit -m 'feat: add ... feature'`)
-4. Push to the branch (`git push origin feature/...-feature`)
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** your feature branch
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Commit** your changes
+   ```bash
+   git commit -m 'feat: add amazing feature'
+   ```
+4. **Push** to the branch
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open** a Pull Request
 
-### Guidelines
+### Contribution Guidelines
 
-- Follow the existing code style
-- Run `npm run format` before committing
-- Add/update tests if applicable
-- Update documentation for new features
+- ✅ Follow existing code style
+- ✅ Run `npm run format` before committing
+- ✅ Add/update tests if applicable
+- ✅ Update documentation for new features
+
+---
+
+## 📚 Documentation
 
 
-## Links
+| Resource | Link |
+|----------|------|
+| 📦 **GitHub Repository** | [github.com/Forlk4/primereact-kit-tailwind](https://github.com/Forlk4/primereact-kit-tailwind) |
+| 📖 **PrimeReact Docs** | [primereact.org](https://primereact.org/) |
+| 🎨 **Tailwind CSS Docs** | [tailwindcss.com](https://tailwindcss.com/) |
+| 🐛 **Report Issues** | [GitHub Issues](https://github.com/Forlk4/primereact-kit-tailwind/issues) |
 
-- [GitHub Repository](https://github.com/Forlk4/primereact-kit-tailwind)
-- [PrimeReact Documentation](https://primereact.org/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/)
 
-## Support
+---
 
-If you find this project helpful, please consider giving it a ⭐️ on GitHub!
+## 📄 License
 
-For issues and questions, please use the [GitHub Issues](https://github.com/Forlk4/primereact-kit-tailwind/issues) page.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 💖 Support
+
+If you find this project helpful, please consider:
+
+⭐ **Starring** the repository
+
+🐛 **Reporting** issues
+
+🤝 **Contributing** code
+
+📢 **Sharing** with others
+
+---
+
+Made with ❤️ by the community
+
+[![GitHub](https://img.shields.io/badge/GitHub-Forlk4-181717?style=flat&logo=github)](https://github.com/Forlk4)
+
