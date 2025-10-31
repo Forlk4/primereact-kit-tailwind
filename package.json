@@ -1,6 +1,6 @@
 {
   "name": "primereact-kit-tailwind",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tailwind CSS preset library for PrimeReact components using PassThrough API",
   "author": "Forlk4 <muhammadhafizalkautsar@gmail.com>",
   "type": "module",
