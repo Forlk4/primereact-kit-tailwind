@@ -2,6 +2,7 @@
   "name": "primereact-kit-tailwind",
   "version": "1.0.0",
   "description": "Tailwind CSS preset library for PrimeReact components using PassThrough API",
+  "author": "Forlk4 <muhammadhafizalkautsar@gmail.com>",  
   "type": "module",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
@@ -21,17 +22,7 @@
     "build": "vite build && npm run copy-types",
     "format": "prettier --write .",
     "copy-types": "cp src/index.d.ts dist/index.d.ts"
-  },
-  "keywords": [
-    "primereact",
-    "tailwind",
-    "tailwindcss",
-    "react",
-    "ui",
-    "components"
-  ],
-  "author": "",
-  "license": "MIT",
+  },  
   "peerDependencies": {
     "primereact": "^10.0.0",
     "react": "^19.0.0"
@@ -47,5 +38,27 @@
     "terser": "^5.44.0",
     "typescript": "~5.9.3",
     "vite": "^7.1.7"
-  }
+  },  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Forlk4/primereact-kit-tailwind.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Forlk4/primereact-kit-tailwind/issues"
+  },
+  "homepage": "https://github.com/Forlk4/primereact-kit-tailwind#readme",
+  "keywords": [
+    "primereact",
+    "tailwind",
+    "tailwindcss",
+    "react",
+    "ui",
+    "components",
+    "preset",
+    "passthrough"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
 }
